@@ -7,7 +7,11 @@
           <div class="level">
             <div class="level-left">
               <div class="level-item">
-                <input type="text" class="input" placeholder="New York">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="New York"
+                >
               </div>
               <div class="level-item">
                 <span>Meetups in New York, USA</span>
@@ -15,8 +19,12 @@
             </div>
             <div class="level-right">
               <div class="level-item">
-                <button class="button is-medium m-r-sm">Meetups</button>
-                <button class="button is-medium">Calendar</button>
+                <button class="button is-medium m-r-sm">
+                  Meetups
+                </button>
+                <button class="button is-medium">
+                  Calendar
+                </button>
               </div>
             </div>
           </div>
@@ -26,22 +34,36 @@
     <div class="container">
       <section class="section page-find">
         <div class="columns cover is-multiline">
-          <div v-for="meetup of meetups" :key="meetup._id" class="column is-one-third" :style="{'min-height': '160px'}">
-            <router-link :to="'/meetups/' + meetup._id" class="meetup-card-find"
-               href="#"
-               :style="{'background-image': `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${meetup.image})`}">
+          <div
+            v-for="meetup of meetups"
+            :key="meetup._id"
+            class="column is-one-third"
+            :style="{'min-height': '160px'}"
+          >
+            <router-link
+              :to="'/meetups/' + meetup._id"
+              class="meetup-card-find"
+              href="#"
+              :style="{'background-image': `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${meetup.image})`}"
+            >
               <div class="meetup-card-find-content">
                 <div class="meetup-card-find-content-date is-pulled-right">
-                  <span class="month">{{meetup.startDate | formatDate('MMM')}}</span>
-                  <span class="day">{{meetup.startDate | formatDate('D')}}</span>
+                  <span class="month">{{ meetup.startDate | formatDate('MMM') }}</span>
+                  <span class="day">{{ meetup.startDate | formatDate('D') }}</span>
                 </div>
                 <div class="meetup-card-find-content-info">
-                  <p class="title is-4 no-padding is-marginless m-b-xs">{{meetup.title}}</p>
-                  <span class="tag is-success m-b-xs">{{meetup.category.name | capitalize}}</span>
-                  <p class="subtitle is-7">{{meetup.location}}</p>
+                  <p class="title is-4 no-padding is-marginless m-b-xs">
+                    {{ meetup.title }}
+                  </p>
+                  <span class="tag is-success m-b-xs">{{ meetup.category.name | capitalize }}</span>
+                  <p class="subtitle is-7">
+                    {{ meetup.location }}
+                  </p>
                 </div>
                 <div class="meetup-card-find-interest">
-                  <p class="subtitle is-7">{{meetup.joinedPeopleCount}}</p>
+                  <p class="subtitle is-7">
+                    {{ meetup.joinedPeopleCount }}
+                  </p>
                 </div>
               </div>
             </router-link>

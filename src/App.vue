@@ -12,7 +12,7 @@
 import TheNavbar from '@/components/shared/TheNavbar'
 import TheFooter from '@/components/shared/TheFooter'
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     TheNavbar,
     TheFooter

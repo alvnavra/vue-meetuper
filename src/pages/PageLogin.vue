@@ -3,27 +3,42 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
-          <h3 class="title has-text-grey">Login</h3>
-          <p class="subtitle has-text-grey">Please login to proceed.</p>
+          <h3 class="title has-text-grey">
+            Login
+          </h3>
+          <p class="subtitle has-text-grey">
+            Please login to proceed.
+          </p>
           <div class="box">
             <figure class="avatar">
-                <img src="https://placehold.it/128x128">
+              <img src="https://placehold.it/128x128">
             </figure>
             <form>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         @blur="$v.form.email.$touch()"
-                         type="email"
-                         placeholder="Your Email"
-                         autofocus=""
-                         autocomplete="email"
-                         v-model="form.email">
-                  <div v-if="$v.form.email.$error" class="form-error">
-                    <span v-if="!$v.form.email.required" class="help is-danger">
+                  <input
+                    v-model="form.email"
+                    class="input is-large"
+                    type="email"
+                    placeholder="Your Email"
+                    autofocus=""
+                    autocomplete="email"
+                    @blur="$v.form.email.$touch()"
+                  >                  
+                  <div
+                    v-if="$v.form.email.$error"
+                    class="form-error"
+                  >
+                    <span
+                      v-if="!$v.form.email.required"
+                      class="help is-danger"
+                    >
                       Email is required
                     </span>
-                    <span v-if="!$v.form.email.email" class="help is-danger">
+                    <span
+                      v-if="!$v.form.email.email"
+                      class="help is-danger"
+                    >
                       Provide a valid Email
                     </span>
                   </div>
@@ -31,29 +46,41 @@
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         @blur="$v.form.password.$touch()"
-                         type="password"
-                         placeholder="Your Password"
-                         autocomplete="current-password"
-                         v-model="form.password">
-                  <div v-if="$v.form.password.$error" class="form-error">
-                    <span v-if="!$v.form.password.required" class="help is-danger">
+                  <input
+                    v-model="form.password"
+                    class="input is-large"
+                    type="password"
+                    placeholder="Your Password"
+                    autocomplete="current-password"
+                    @blur="$v.form.password.$touch()"
+                  >
+                  <div
+                    v-if="$v.form.password.$error"
+                    class="form-error"
+                  >
+                    <span
+                      v-if="!$v.form.password.required"
+                      class="help is-danger"
+                    >
                       Password is required
                     </span>                  
                   </div>                         
                 </div>
               </div>
-              <button class="button is-block is-info is-large is-fullwidth" 
-                      :disabled="isFormInvalid"
-                      @click.prevent="login">
-                      Login
+              <button
+                class="button is-block is-info is-large is-fullwidth" 
+                :disabled="isFormInvalid"
+                @click.prevent="login"
+              >
+                Login
               </button>
             </form>
           </div>
           <p class="has-text-grey">
             <a>Sign In With Google</a> &nbsp;·&nbsp;
-            <router-link :to="{name:'PageRegister'}">Sign Up</router-link> &nbsp;·&nbsp;
+            <router-link :to="{name:'PageRegister'}">
+              Sign Up
+            </router-link> &nbsp;·&nbsp;
             <a href="../">Need Help?</a>
           </p>
         </div>

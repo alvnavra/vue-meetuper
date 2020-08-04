@@ -1,23 +1,47 @@
 <template>
-  <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar is-spaced"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
-      <router-link class="navbar-item" :to="{name:'PageHome'}">
-        <h1 class="title is-4">VueMeetuper</h1>
+      <router-link
+        class="navbar-item"
+        :to="{name:'PageHome'}"
+      >
+        <h1 class="title is-4">
+          VueMeetuper
+        </h1>
       </router-link>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+      <a
+        role="button"
+        class="navbar-burger burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample"
+      >
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div
+      id="navbarBasicExample"
+      class="navbar-menu"
+    >
       <div class="navbar-start">
-        <router-link class="navbar-item" :to="{name:'PageHome'}">  
+        <router-link
+          class="navbar-item"
+          :to="{name:'PageHome'}"
+        >  
           Home
         </router-link>
 
-        <router-link class="navbar-item" :to="{name:'PageMeetupFind'}">
+        <router-link
+          class="navbar-item"
+          :to="{name:'PageMeetupFind'}"
+        >
           Find
         </router-link>
 
@@ -47,10 +71,16 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <router-link class="button is-primary" :to="{name:'PageRegister'}">
+            <router-link
+              class="button is-primary"
+              :to="{name:'PageRegister'}"
+            >
               <strong>Sign up</strong>
             </router-link>
-            <router-link class="button is-light" :to="{name:'PageLogin'}">
+            <router-link
+              class="button is-light"
+              :to="{name:'PageLogin'}"
+            >
               Log in
             </router-link>
           </div>
