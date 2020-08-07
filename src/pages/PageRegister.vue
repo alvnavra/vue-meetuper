@@ -231,7 +231,12 @@
     methods:{
       register(){
         this.$v.form.$touch()
-        this.$store.dispatch('auth/RegisterUser',this.form)
+        this.$store.dispatch('auth/RegisterUser',this.form).then(()=>{
+          this.$router.push('/login')          
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
       }
     }
   }

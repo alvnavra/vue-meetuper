@@ -119,8 +119,14 @@
     },
     methods:{
       login(){      
-        this.$v.form.$toch()
+        this.$v.form.$touch()
         this.$store.dispatch('auth/LoginWithEmailAndPassword',this.form)
+          .then(()=>{
+            this.$router.push('/')
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
       }
     }
   }

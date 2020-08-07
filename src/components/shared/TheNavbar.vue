@@ -28,7 +28,7 @@
 
     <div
       id="navbarBasicExample"
-      class="navbar-menu"
+      class="navbar-menu is-active"
     >
       <div class="navbar-start">
         <router-link
@@ -68,30 +68,74 @@
         </div>
       </div>
 
-      <div class="navbar-end">
+      <div class="navbar-end">        
         <div class="navbar-item">
+          <div v-if="user">
+            Welcome {{ user.username }}
+          </div>
+        </div>
+        <div 
+          v-if="user" 
+          class="navbar-item has-dropdown is-hoverable"
+        >
+          <a class="navbar-link">
+            Account
+          </a>
+          <div 
+            class="navbar-dropdown"
+          >
+            <a 
+              href="#" 
+              class="navbar-item"
+            >
+              Profile
+            </a>
+            <hr class="navbar-divider">
+            <a
+              class="navbar-item" 
+              @click.prevent="logout" 
+            >
+              Logout
+            </a>
+          </div>
+        </div>
+        <div 
+          v-else 
+          class="navbar-item has-dropdown "
+        >
           <div class="buttons">
-            <router-link
+            <router-link 
+              :to="{name: 'PageRegister'}" 
               class="button is-primary"
-              :to="{name:'PageRegister'}"
             >
               <strong>Sign up</strong>
             </router-link>
-            <router-link
+            <router-link 
+              :to="{name: 'PageLogin'}" 
               class="button is-light"
-              :to="{name:'PageLogin'}"
             >
               Log in
             </router-link>
           </div>
-        </div>
+        </div>    
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   export default {
+    computed:{
+      ...mapGetters({
+        user:'auth/authUser'
+      })
+    },
+    methods:{
+      logout () {
+        this.$store.dispatch('auth/logout')
+      }
+    }
   }
 </script>
 
